@@ -1,0 +1,11 @@
+controller:
+  service:
+    type: LoadBalancer
+    ports:
+    - name: random
+      port: 5773
+      protocol: TCP
+      targetPort: 5773
+
+  extraArgs:
+  - --configmap-tcp-services=haproxy-controller/tcp-configmap
